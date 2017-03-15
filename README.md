@@ -74,3 +74,5 @@ We are working on a [markdown version](https://github.com/glpi-project/doc)
 * IRC : irc://irc.freenode.org/glpi
 * [Plugin directory](http://plugins.glpi-project.org)
 * [Plugin development documentation](https://github.com/pluginsGLPI/example)
+
+## LL
