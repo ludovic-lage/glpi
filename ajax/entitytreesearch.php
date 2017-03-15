@@ -1,33 +1,34 @@
 <?php
-/**
- * ---------------------------------------------------------------------
- * GLPI - Gestionnaire Libre de Parc Informatique
- * Copyright (C) 2015-2017 Teclib' and contributors.
- *
- * http://glpi-project.org
- *
- * based on GLPI - Gestionnaire Libre de Parc Informatique
- * Copyright (C) 2003-2014 by the INDEPNET Development Team.
- *
- * ---------------------------------------------------------------------
- *
- * LICENSE
- *
- * This file is part of GLPI.
- *
- * GLPI is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * GLPI is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with GLPI. If not, see <http://www.gnu.org/licenses/>.
- * ---------------------------------------------------------------------
+/*
+ * @version $Id$
+ -------------------------------------------------------------------------
+ GLPI - Gestionnaire Libre de Parc Informatique
+ Copyright (C) 2015-2016 Teclib'.
+
+ http://glpi-project.org
+
+ based on GLPI - Gestionnaire Libre de Parc Informatique
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
+ 
+ -------------------------------------------------------------------------
+
+ LICENSE
+
+ This file is part of GLPI.
+
+ GLPI is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ GLPI is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
+ --------------------------------------------------------------------------
  */
 
 /** @file
@@ -46,17 +47,25 @@ Session::checkLoginUser();
 $res = array();
 
 if (isset($_POST['search_string'])) {
-   $query = "SELECT *
+/*   $query = "SELECT *
              FROM `glpi_entities`
              WHERE `name` LIKE '%".$_POST['search_string']."%'
-             ORDER BY `completename`";
+             ORDER BY `name` limit 50";
+*/
+    $query = "SELECT *
+             FROM `glpi_plugin_entity_sig`
+             WHERE `name` LIKE '%".$_POST['search_string']."%'
+             ORDER BY `name` limit 50";
 
-   foreach ($DB->request($query) as $data) {
+   foreach($DB->request($query) as $data) {
       $ancestors = getAncestorsOf('glpi_entities', $data['id']);
       foreach ($ancestors as $val) {
          $res[] = '#ent'.$val;
       }
    }
+   session_start();
+   $_SESSION["search_string"]=$_POST['search_string'];
 }
 $res = json_encode($res);
 echo $res;
+?>
