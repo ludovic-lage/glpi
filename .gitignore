@@ -19,7 +19,6 @@ phpunit.xml
 /coverage/
 /config/based_config.php
 /config/config.php
-/config/define.php
 /nbproject
 .composer.hash
 /css/**/*.min.css
