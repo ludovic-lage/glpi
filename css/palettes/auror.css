@@ -1,37 +1,14 @@
-/**
- * ---------------------------------------------------------------------
- * GLPI - Gestionnaire Libre de Parc Informatique
- * Copyright (C) 2015-2017 Teclib' and contributors.
- *
- * http://glpi-project.org
- *
- * based on GLPI - Gestionnaire Libre de Parc Informatique
- * Copyright (C) 2003-2014 by the INDEPNET Development Team.
- *
- * ---------------------------------------------------------------------
- *
- * LICENSE
- *
- * This file is part of GLPI.
- *
- * GLPI is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * GLPI is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with GLPI. If not, see <http://www.gnu.org/licenses/>.
- * ---------------------------------------------------------------------
- */
+
 /* ===== LOGIN ===== */
+#header {
+   z-index: 50;
+   height: 96px;
+   width: 100%;
+   position: fixed;
+}
 
 #firstboxlogin  {
-   background-color: #1B2F62;
+   background-color: #f8f7f3;
 }
 
 #logo_login {
@@ -39,18 +16,18 @@
 }
 
 #display-login {
-   color: #FFF;
+   color: #f8f7f3;
 }
 
 #text-login {
-   background-color: #3A5693;
+   background-color: #0F2067;
    color: #FFF;
 }
 
 
 /* ====== GENERAL ====== */
 
-a, a:link, .ui-widget-content a {
+a, a:link {
     color : #3A5693;
 }
 
@@ -61,7 +38,7 @@ a, a:link, .ui-widget-content a {
 /* ====== HEADER ====== */
 
 #header_top {
-   background-color: #1B2F62;
+   background-color: #0F2067;
 }
 
 #c_preference a {
@@ -100,13 +77,245 @@ ul#menu ul li a {
 }
 
 /* ====== BUTTONS ====== */
-
-a.vsubmit,
+input.submit {   
+  background-color: #3A5693;
+  color: #fff;
+  border: 1px solid #CCC;
+}
+input.submit:hover {
+   background-color: #CCC;
+   color: #0F2067;
+}
+a.vsubmit, 
 .vsubmit a {
-   color: #8f5a0a;
+   color: #3A5693;
 }
 
 #BackToTop {
-   background-color: #1B2F62;
-   color: #fff;
+   background-color: #0F2067;
+   color: #FFF;
+}
+
+#boxlogin input[type=text]:focus,
+#boxlogin input[type=password]:focus{
+   border-color:#0F2067;
+   background-color: #fff;
+   -moz-box-shadow:0 0 3px #0F2067;
+   -webkit-box-shadow:0 0 3px #0F2067;
+}
+/*
+input.submit, 
+span.vsubmit, a.vsubmit, 
+#BackToTop {
+   padding: 5px;
+   cursor:pointer;
+   height: auto;
+   font: bold 12px Arial, Helvetica;
+   color: #FFF;
+   background-color: #0F2067;
+   border: 0; 
+}*/
+
+#header #c_logo {
+   position: absolute;
+   z-index: 1000;
+   width: 100px;
+   height: 55px;
+   float: left;
+   background: url("../../pics/fd_logo.png") 0 0 repeat-x;
+}
+
+.tab_bg_1 {
+   background-color: #F2F0EB;
+}
+
+.tab_bg_2 {
+   background-color: #CFD8DC;
+}
+
+.tab_cadrehov tr.rowHover,
+.tab_cadrehov td.rowHover,
+.tab_cadre_fixehov tr.rowHover,
+.tab_cadre_fixehov td.rowHover{
+   background-color:#9CAFC2;
+   color: #000;
+}
+
+.central .tab_cadre_fixehov th, .central .tab_cadrehov th {
+   background-color: #3A5693;
+   color: #FFF;
+}
+
+.tab_cadrehov th.headHover,
+.tab_cadre_fixehov th.headHover{
+   background-color:#3A5693;
+   color: #FFF;
+}
+
+.tab_cadrehov td.columnHover,
+.tab_cadre_fixehov td.columnHover{
+   background-color:#F3F3F3;
+}
+
+.tab_cadre td, .tab_cadre_fixehov td, .tab_cadrehov td, .tab_cadre_fixe td, .tab_cadre_ticket td {
+   border:1px solid #EEE;/*EEE*/
+   /*background-color:#F0F1F2;*/
+}
+
+.label-checkbox .box {
+   top: -2px;
+   border:1px dotted #B5B5BF;
+   border-radius: 3px;
+   height:16px; 
+   width:16px;
+}
+
+.subheader .box,
+th .label-checkbox .box {
+   border:1px dotted #B5B5BF;
+}
+
+.label-checkbox .check {
+   top: -5px;
+   left: 4px;
+   width: 8px;
+   height: 16px;
+   border:3px solid #293540;
+   border-top: none;
+   border-left: none;
+   opacity:0; 
+   -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);
+}
+
+
+.actor_single {
+   /*border-top: 1px dashed #AAA;*/
+   padding: 15px 0 8px 0;
+   margin-top: 8px;
+   background-color: #F2F0EB;
+} 
+
+.tab_cadre_ticket {
+   margin: 0px auto 5px auto;
+   /*border: 1px solid #cccccc;*/
+   background: #FFF;
+   z-index:1;
+   text-align: left;
+   font-size: 11px;
+   max-width:950px;
+   width: 100%;
+   border-spacing: 0;
+   margin-left: 360px;
+}
+
+.tab_cadre th, .tab_cadre_fixe th, .tab_cadre_fixehov th, .tab_cadrehov th {
+   font-size: 12px;
+   font-weight: bold;
+   text-align: center;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -o-border-radius: 4px;
+   padding: 2px;
+   border-radius: 0;
+   margin: 0;
+   font-size: 1.1em;
+   color: #FFF;
+   padding: 10px 5px;
+   background-color:#3A5693;
+}
+
+.tab_actors {
+   display: table;
+}
+
+.actor_title, .actor-bloc {
+   display: table-cell;
+   float: none;
+   vertical-align: top;
+   background-color: #F2F0EB;
+}
+
+.actor_title, .actor-head {
+   color: #FFF;
+   background-color:#3A5693;
+   margin: 0;
+}
+
+.tab_cadre_fixehov th a, .tab_cadrehov th a {
+   color: #F2F2F2;
+   font-size: 1.1em;
+}
+
+.tab_cadre_ticket th {
+   font-size: 12px;
+   font-weight: bold;
+   text-align: center;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -o-border-radius: 4px;
+   padding: 2px;
+   border-radius: 0;
+   margin: 0;
+   font-size: 1.1.em;
+   color: #FFF;
+   padding: 10px 5px;
+   background-color:#3A5693;
+}
+tab_bgtest {
+   z-index: 50;
+   position: fixed;
+}
+.actor_head {
+   background-color: #3A5693;
+   margin: 0 1px;
+   padding: 1px 0;
+   height: 16px;
+}
+
+.actor_row {
+   margin-bottom: 8px;
+}
+
+#page {
+   padding: 8px 8px 20px 8px;
+   padding-top: 7%;
+   min-height: 80%;
+   margin: 0px auto;
+   background-color:#F0F1F2;
+}
+
+.tab_bgtest {
+    z-index: 60;
+    position: fixed;
+    width: 100%;
+#   height: 30px;
+#   display: block;
+    left: 0px;
+    bottom: 0px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
